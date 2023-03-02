@@ -1,0 +1,2 @@
+//generall
+let mouse; 

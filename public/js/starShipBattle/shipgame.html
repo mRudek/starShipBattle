@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Starship Battle"
+    />
+    <link rel="stylesheet" href="shipgame.css">
+    <title>Starship Battle</title>
+  </head>
+  <body onload="gOnPageLoad()">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+<a>***************** GAME *****************</a><br>
+    <div onmousedown="gmouseClick(event,`shipsinkCanvas`)">
+      <canvas id="shipsinkCanvas"  style="border:1px solid #000000;"></canvas>
+    </div>
+
+    <div id="testarea">
+      <a>***************** game Options Developer *****************</a><br>
+      <a>***************** option gameParaDev hide controlls *****************</a><br>
+      <div>
+          <button type="button" onclick="hideGameParaDev_Test()">hideGameParaDev_Test</button> 
+          <button type="button" onclick="showGameParaDev_Test()">showGameParaDev_Test</button> 
+      </div>
+    </div>
+      <div id="gameParaDev">
+        <a>***************** loop controll in Gui / runing loop: LoopStatus number increases*****************</a><br>
+        <div>
+          <button type="button" onclick="startLoop_Test()">startLoop_Test</button> 
+          <button type="button" onclick="startStopLoop_Test()">startStopLoop_Test</button> 
+        </div>
+        <div>
+          <input type="text" id="xPosMouseTest" value=""> <a> xClick</a>
+          <input type="text" id="yPosMouseTest" value=""> <a> yClick</a> 
+        </div>
+        <div>
+          <input type="text" id="loopStatustxt" value=""> <a> LoopStatus</a> 
+        </div>
+        <div>
+          <a>***************** canvas gamePhase controlls *****************</a><br>
+          <div>
+              <button type="button" onclick="startNewRound_Test()">startNewRound_Test</button> 
+  
+              <button type="button" onclick="setObjects_Test()">setObjects_Test</button> 
+              <button type="button" onclick="drawObjects_Test()">drawObjects_Test</button> 
+              <button type="button" onclick="deleteObjects_Test()">deleteObjects_Test</button> 
+          </div>
+        </div>
+        <div>
+          <a>***************** canvas Size controlls *****************</a><br>
+          <div>
+              <input type="text" id="widthtest" value="750"> <a> width</a>
+              <input type="text" id="heighttest" value="600"> <a> height</a><br>
+              <button type="button" onclick="setCanvasSize_Test()">setCanvasSize_Test</button> 
+              <button type="button" onclick="setObjects_Test()">setObjects_Test</button> 
+              <button type="button" onclick="drawObjects_Test()">drawObjects_Test</button> 
+              <button type="button" onclick="deleteObjects_Test()">deleteObjects_Test</button> 
+          </div>
+      </div>
+    </div>
+
+
+
+
+    <div id="lobby">
+      lobby
+    </div>
+<!-- *************************** import scripts *********************** --> 
+    <!-- *************************** Preload Images *********************** --> 
+    <script>
+        //Preload all Images; Source: https://stackoverflow.com/questions/34596526/multiple-images-not-load-on-canvas
+        // an array of image URLs
+        var imageNames = ["shipgame/assets/empty.jpg", "shipgame/assets/ship.jpg","shipgame/assets/water.jpg",
+                            "shipgame/assets/waterpoint.jpg","shipgame/assets/shipKilled.jpg","shipgame/assets/mainshipE.jpg"
+                            ,"shipgame/assets/mainshipR.jpg"];
+        // an array of images 
+        var images = [];
+        // for each image name create the image and put it into the images array
+        imageNames.forEach(function(name){
+            image = new Image();   // create image
+            image.src = name;      // set the src
+            images.push(image);    // push it onto the image array
+        });
+    </script>   
+    <!-- *************************** testenginge *********************** -->
+    <script  src="shipgame/gameTests.js" type="text/javascript"></script>  
+    <!-- *************************** game shipgame*********************** -->
+    <script  src="shipgame/gamemodel.js" type="text/javascript"></script>
+    <script  src="shipgame/gamecontroller.js" type="text/javascript"></script>  
+    <!-- *************************** gameengine *********************** -->
+    <script  src="shipgame/globalVars.js" type="text/javascript"></script>
+    <script  src="shipgame/guicontroller.js" type="text/javascript"></script>  
+  </body>
+</html>
