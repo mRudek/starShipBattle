@@ -1,0 +1,10 @@
+//Inhalt aus ./public/react kann gejöscht werden, da mit folgendem Befehl generiert
+
+//https://reactjs.org/docs/add-react-to-a-website.html
+//run in console
+npx babel --watch src --out-dir ./public/reactJSXConverted --presets react-app/prod
+
+//run in seperate console:
+npm run react
+
+

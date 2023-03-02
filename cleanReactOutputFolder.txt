@@ -1,0 +1,6 @@
+//run first
+del ./public/reactJSXConverted
+
+//crate a clean folder for react
+npm run react
+
